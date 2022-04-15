@@ -11,10 +11,10 @@ using namespace std;
 Hero::Hero()
 {
 	string default_name = "Gigachad";
-	string default_species = "Goblin";
+	string default_species = "???";
 	int default_age = 20;
 	int default_health = 100;
-	int default_damage_per_hit = 5;
+	int default_damage_per_hit = 10;
 };
 
 //Hero using user input
@@ -48,5 +48,36 @@ void Hero::Hero_Status_Check(){
 	cout << "Hero species: " << Hero_Species << endl;
 	cout << "Hero age: " << Hero_Age << endl;
 	cout << "Hero health: " << Hero_Health << endl;
-	cout << "Hero Damage: " << Hero_Damage << endl;
+	cout << "Hero damage per action: " << Hero_Damage << endl;
 }
+
+//Enemy
+//Default enemy
+Enemy::Enemy()
+{
+	Enemy_Species = ???
+	Enemy_Health = 50;
+	Enemy_Attack = 10;
+}
+
+virtual void Enemy::Enemy_Status_Check(){
+	cout << "Enemy is a " << Enemy_Species << endl;
+	cout << "Health: " << Enemy_Health << endl;
+	cout << "Attack is: " << Enemy_Attack << endl;
+}
+
+//making a goblin
+Goblin::Goblin(int goblin_health, int goblin_attack): Enemy(Enemy_Health, Enemy_Attack)
+{
+	Goblin_Weapon = "Bite";
+	Goblin_Species = "Goblin";
+}
+
+//making a Bossman
+Bossman::Bossman(int bossman_starting_health): Enemy(Enemy_Health){
+	Bossman_Current_Health = bossman_starting_health * 2;
+	Bossman_Weapon = "Big smash";
+	Bossman_Attack = 20;
+}
+
+
